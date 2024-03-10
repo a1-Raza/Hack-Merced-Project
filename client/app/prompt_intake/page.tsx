@@ -1,5 +1,12 @@
 "use client";
-import "./prompts.css"
+import "./prompts.css";
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+//npm install @fortawesome/free-solid-svg-icons
+//npm install @fortawesome/react-fontawesome
+//npm install @fortawesome/free-solid-svg-icons
+
 
 export default function Prompts() {
     function animateButton() {
@@ -27,6 +34,7 @@ export default function Prompts() {
                     </div>
                     <div className="input-group zoom-group">
                         <input id="zoomInput" className="promptInput" type="text" name="zoom" placeholder="Zoom" required />
+                        <FontAwesomeIcon icon={faQuestionCircle} />
                     </div>
                     <button id="promptSubmit" type="submit" onClick={animateButton}>Submit</button>
                 </form>

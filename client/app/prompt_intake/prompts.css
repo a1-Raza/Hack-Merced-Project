@@ -34,7 +34,7 @@ header h1 {
     text-align: center;
     font-size: 48px; 
     font-weight: bold; 
-    margin-top: 20px; /* Adjusted margin */
+    margin-top: 50px; /* Adjusted margin */
 }
 
 #promptForm {
@@ -93,14 +93,39 @@ header h1 {
     background-color: #45a049;
 }
 
-@keyframes shrink {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(0.8);
-    }
-    100% {
-        transform: scale(1);
-    }
+.info-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Adjusted margin */
+    cursor: pointer;
+}
+
+.info-icon i {
+    font-size: 24px;
+    color: #007bff; /* Blue color */
+}
+
+.info-box {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9; /* Light gray background color */
+    color: #000; /* Black color */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+    z-index: 1;
+    width: 200px; /* Adjusted width */
+    top: 60px; /* Adjusted top position */
+    left: calc(100% + 20px); /* Adjusted left position */
+}
+
+.info-box::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px; /* Half the height of the arrow */
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #f9f9f9 transparent transparent; /* Transparent border on the left side */
 }
