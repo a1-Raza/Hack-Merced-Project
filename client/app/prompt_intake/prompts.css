@@ -147,3 +147,8 @@ header h1 {
     width: max-content; /* Adjust to fit content width */
     height: max-content; /* Adjust to fit content height */
 }
+
+.custom-datepicker {
+    font-family: 'Helvetica', Times, sans-serif;
+    text-align: center;
+}
