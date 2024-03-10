@@ -22,13 +22,7 @@ export default function Prompts() {
     const [date2, setDate2] = useState<Date | null>(null);
 
     function animateButton() {
-        const button = document.getElementById('promptSubmit');
-        if (button) {
-            button.style.animation = 'shrink 0.5s forwards';
-            setTimeout(() => {
-                button.style.animation = '';
-            }, 500);
-        }
+        // Call fetchWithParams and pass all the required variables
         const response = fetchWithParams<DataResponse>('data', {
             'lat': latitude,
             'long': longitude,
@@ -37,7 +31,21 @@ export default function Prompts() {
             'date2': date2,
             'additional': null
         });
-    };
+    }
+
+    function handleSubmit() {
+        // Call animateButton function to trigger the fetchWithParams
+        animateButton();
+
+        // Save input values
+        // For example, you can save the values to localStorage or send them to the server
+        // Here, we are just logging the values to the console
+        console.log('Latitude:', latitude);
+        console.log('Longitude:', longitude);
+        console.log('Dimensions:', dim);
+        console.log('Start Date:', date1);
+        console.log('End Date:', date2);
+    }
 
     return (
         <>
@@ -46,7 +54,7 @@ export default function Prompts() {
                 <img src="/gold-orbit.png" alt="Globe picture" style={{ width: "100%", maxWidth: "60px", position: "absolute", top: "0", right: "65px", marginTop: "6px" }} />
             </header>
             <div>
-                <div id="promptText" className="prompt-text">Enter Coordinates</div>
+                <div id="promptText" className="prompt-text">Enter Information</div>
                 <form id="promptForm" style={{ marginBottom: "350px" }}>
                     <div className="input-group">
                         <input id="latitudeInput" className="promptInput" type="text" name="latitude" placeholder="Latitude" value={latitude} onChange={(e) => setLatitude(e.target.value)} required />
@@ -75,11 +83,8 @@ export default function Prompts() {
                         placeholderText="End Date"
                         className="rounded-md border custom-datepicker"
                     />
-                    <button id="promptSubmit" type="button" onClick={animateButton}>Submit</button>
+                    <button id="promptSubmit" type="button" onClick={handleSubmit}>Submit</button>
                 </form>
-                <div id="promptList" className="chat-container">
-                    {/* Prompt list will be displayed here */}
-                </div>
             </div>
         </>
     );
