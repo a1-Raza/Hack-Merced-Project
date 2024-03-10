@@ -8,7 +8,7 @@ body {
     margin: 0;
     background-color: rgba(240, 240, 240, 0.851); 
   }
-
+  
   header {
     background: #002856; /* Merced Colors */
     color: #DAA900; /* Golden text color */
@@ -20,22 +20,23 @@ body {
     position: fixed; 
     top: 0; 
     left: 0; 
+    border-bottom: 3.5px solid #DAA900; /* Gold line under the navy box */
   }
-
+  
   header h1 {
-    margin: 0; 
+    margin-left: 50px; 
     font-family: 'Helvetica', Times, sans-serif;
-    font-size: 25px; 
+    font-size: 35px; 
     font-weight: bold;
   }
-
+  
   #promptText {
     text-align: center;
     font-size: 48px; 
     font-weight: bold; 
     margin-top: -300px;
   }
-
+  
   #promptForm {
     display: flex;
     flex-direction: column;
@@ -43,7 +44,12 @@ body {
     justify-content: center;
     margin-top: 40px; /* Adjusted margin */
   }
-
+  
+  .input-group {
+    display: flex;
+    align-items: flex-start; /* Align items to the left */
+  }
+  
   .promptInput {
     width: 400px;
     height: 40px;
@@ -54,20 +60,20 @@ body {
     border: 1px solid #ccc;
     transition: border-color 0.3s ease;
   }
-
+  
   .promptInput:focus {
     border-color: #007bff; /* Change border color on focus */
   }
-
+  
   .promptInput::placeholder {
     color: #999; /* Light gray color */
     transition: color 0.3s ease; /* Smooth transition for placeholder color */
   }
-
+  
   .promptInput:focus::placeholder {
     color: transparent; /* Make placeholder text transparent on focus */
   }
-
+  
   #promptSubmit {
     background-color: #4CAF50;
     color: white;
@@ -80,11 +86,11 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
   }
-
+  
   #promptSubmit:hover {
     background-color: #45a049;
   }
-
+  
   @keyframes shrink {
     0% {
       transform: scale(1);
