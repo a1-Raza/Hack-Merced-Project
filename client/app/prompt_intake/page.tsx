@@ -19,13 +19,10 @@ export default function Prompts() {
                 <img src="/gold-orbit.png" alt="Globe picture" style={{ width: "100%", maxWidth: "60px", position: "absolute", top: "0", right: "65px", marginTop: "6px" }} />
             </header>
             <div>
-                
                 <div id="promptText" className="prompt-text">Enter Coordinates</div>
-                <form id="promptForm">
+                <form id="promptForm" style={{ marginBottom: "350px" }}>
                     <div className="input-group">
                         <input id="latitudeInput" className="promptInput" type="text" name="latitude" placeholder="Latitude" required />
-                    </div>
-                    <div className="input-group">
                         <input id="longitudeInput" className="promptInput" type="text" name="longitude" placeholder="Longitude" required />
                     </div>
                     <div className="input-group zoom-group">
