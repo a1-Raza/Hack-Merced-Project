@@ -1,0 +1,96 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin-top: 100px;
+    background-color: rgba(240, 240, 240, 0.851); 
+}
+
+header {
+    background: #002856; /* Merced Colors */
+    color: #DAA900; /* Golden text color */
+    width: 100%; 
+    padding: 10px 20px;
+    box-sizing: border-box; 
+    display: flex;
+    align-items: center; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    border-bottom: 3.5px solid #DAA900; /* Gold line under the navy box */
+}
+
+header h1 {
+    margin-left: 50px; 
+    font-family: 'Helvetica', Times, sans-serif;
+    font-size: 35px; 
+    font-weight: bold;
+}
+
+#buttonSubmit {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+#headingText {
+    text-align: center;
+    font-size: 25px; 
+    font-weight: bold;
+}
+
+#subheadingText {
+    text-align: center;
+    font-size: 18px;
+}
+
+#imageStack {
+    text-align:"center";
+}
+
+#imageStack > :nth-child(2) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#resultsItems {
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#resultsItems > :first-child {
+    margin-right: 20px;
+}
+
+#imageDate{
+    font-size: 15px; 
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#resultsSet {
+    background-color: #e1e2e3;
+    padding:10px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+#gptOutput {
+    margin: 20px 5px 0px 5px;
+    width: 400px;
+    height: 425px;
+}
+
+#buttonPositioning {
+    text-align: center;
+}
