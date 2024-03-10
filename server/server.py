@@ -18,7 +18,8 @@ def data():
         })
     req = dict(request.get_json())
 
-    img_url1, img_url2, text = new_gpt(36.4081, -119.0903, 0.10, "2017-05-01", "2018-09-01")
+    img_url1, img_url2, text = new_gpt(req["lat"], req["long"], req["dim"], req["date1"], req["date2"], special_instructions=req["additional"])
+    
     return jsonify({
       "url1": img_url1,
       "url2": img_url2,
