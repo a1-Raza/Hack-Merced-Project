@@ -5,9 +5,7 @@ import axios from 'axios'; // Import axios for making HTTP requests
 import "./results.css";
 
 export default function ResultsPage() {
-  const [aiText, setAiText] = useState('');
-  const [imgUrl1, setUrlOne] = useState('');
-  const [imgUrl2, setUrlTwo] = useState('');
+  const [apiData, setApiData] = useState({url1:'', url2:'', text:''});
 
   useEffect(() => {
     fetchData();
@@ -15,23 +13,8 @@ export default function ResultsPage() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.post('/data', {
-        // Include any necessary data for the request
-        lat: 'your_latitude_value',
-        long: 'your_longitude_value',
-        dim: 'your_dimensions_value',
-        date1: 'your_date1_value',
-        date2: 'your_date2_value',
-        additional: 'your_additional_value'
-      });
-
-      // Extract the text from the response and update the state
-      const { text } = response.data;
-      setAiText(text);
-      const { imgUrl1 } = response.data;
-      setUrlOne(imgUrl1);
-      const { imgUrl2 } = response.data;
-      setUrlTwo(imgUrl2);
+      const response = await axios.get('/data'); 
+      setApiData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -66,12 +49,12 @@ export default function ResultsPage() {
             <div id="subheadingText">Lat / Long</div>
             <div>
               <div id="imageDate">yyyy-mm-dd</div>
-              <Image src={imgUrl1 || "https://i.imgur.com/LLcSfJ7.jpeg"}
+              <Image src={apiData.url1 || "https://i.imgur.com/LLcSfJ7.jpeg"}
                 alt="Earth Engine Image" width={200} height={200} />
             </div>
             <div>
               <div id="imageDate">yyyy-mm-dd</div>
-              <Image src={imgUrl2 || "https://i.imgur.com/LLcSfJ7.jpeg"}
+              <Image src={apiData.url2 || "https://i.imgur.com/LLcSfJ7.jpeg"}
                 alt="Earth Engine Image" width={200} height={200} />
             </div>
           </div>
@@ -82,7 +65,7 @@ export default function ResultsPage() {
             Analysis Results
           </div>
           <div id="gptOutput">
-            {aiText || 'Loading...'} {/* Display loading text while waiting for response */}
+            {apiData.text || 'Loading...'} {/* Display loading text while waiting for response */}
           </div>
           <form id="buttonPositioning">
             <button id="buttonSubmit" type="submit" onClick={animateButton}>Analyze Again</button>
