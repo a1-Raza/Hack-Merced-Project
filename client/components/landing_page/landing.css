@@ -1,0 +1,99 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin-top: 100px;
+    background-color: rgba(240, 240, 240, 0.851); 
+}
+
+header {
+    background: #002856; /* Merced Colors */
+    color: #DAA900; /* Golden text color */
+    width: 100%; 
+    padding: 10px 20px;
+    box-sizing: border-box; 
+    display: flex;
+    align-items: center; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    border-bottom: 3.5px solid #DAA900; /* Gold line under the navy box */
+}
+
+header h1 {
+    margin-left: 50px; 
+    font-family: 'Helvetica', Times, sans-serif;
+    font-size: 35px; 
+    font-weight: bold;
+}
+
+#landingLargeText {
+    text-align: center;
+    font-size: 48px; 
+    font-weight: bold; 
+    margin-top: 20px; /* Adjusted margin */
+}
+
+#landingMediumText {
+    text-align: center;
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-top: 20px; /* Adjusted margin */
+}
+
+#bigLandingBox {
+    text-align: center;
+    width: 100%; /* Adjusted width */
+    height: 500px;
+    margin-top: -100px;
+    padding-top: 200px;
+    background-color: #007bff; /* Blue color */
+}
+#hackmercedthing{
+    margin-left: 220px;
+    margin-top: 80px;
+    scale:0.75;
+}
+#agtechthing{
+   margin-left:800px;
+   margin-top:-134px;
+   scale: 0.5;
+}
+#centerlogos{
+    align-content: center;
+}
+#Nasaexplaining{
+    text-align: left;
+    font-size: 40px; 
+    font-weight: bold;
+    margin-top:50px;
+}
+#AItalk{
+    text-align: right;
+    font-size: 40px; 
+    font-weight: bold;
+    margin-top:20px;
+}
+#howtoo{
+    text-align: center;
+    font-size: 40px; 
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#startButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

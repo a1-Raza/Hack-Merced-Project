@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from 'react';
 import Image from 'next/image'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import "./results.css";
 
-export default function Results() {
+export default function ResultsPage() {
   
   function animateButton() {
     const button = document.getElementById('buttonSubmit');
@@ -38,12 +37,12 @@ export default function Results() {
           <div id="imageStack">
             <div id="subheadingText">Lat / Long</div>
             <div>
-              <div id="imageDate">mm-dd-yyyy</div>
+              <div id="imageDate">yyyy-mm-dd</div>
               <Image src="https://i.imgur.com/LLcSfJ7.jpeg"
               alt="Earth Engine Image" width={200} height={200}></Image>
             </div>
             <div>
-                <div id="imageDate">mm-dd-yyyy</div>
+                <div id="imageDate">yyyy-mm-dd</div>
                 <Image src="https://i.imgur.com/LLcSfJ7.jpeg"
                 alt="Earth Engine Image" width={200} height={200}></Image>
               </div>
