@@ -5,6 +5,13 @@ import axios from 'axios'; // Import axios for making HTTP requests
 import "./results.css";
 
 export default function ResultsPage() {
+
+  const receivedDataString = localStorage.getItem('dataKey');
+  const receivedDataJson = JSON.parse(receivedDataString || '{}');
+  console.log(receivedDataJson.text);
+  console.log(receivedDataJson.url1);
+  console.log(receivedDataJson.url2);
+
   const [apiData, setApiData] = useState({url1:'', url2:'', text:''});
 
   useEffect(() => {
@@ -46,15 +53,15 @@ export default function ResultsPage() {
             Satellite Images
           </div>
           <div id="imageStack">
-            <div id="subheadingText">Lat / Long</div>
+            <div id="subheadingText"></div>
             <div>
-              <div id="imageDate">yyyy-mm-dd</div>
-              <Image src={apiData.url1 || "https://i.imgur.com/LLcSfJ7.jpeg"}
+              <div id="imageDate">First Image</div>
+              <Image src={receivedDataJson.url1 || "https://i.imgur.com/LLcSfJ7.jpeg"}
                 alt="Earth Engine Image" width={200} height={200} />
             </div>
             <div>
-              <div id="imageDate">yyyy-mm-dd</div>
-              <Image src={apiData.url2 || "https://i.imgur.com/LLcSfJ7.jpeg"}
+              <div id="imageDate">Second Image</div>
+              <Image src={receivedDataJson.url2 || "https://i.imgur.com/LLcSfJ7.jpeg"}
                 alt="Earth Engine Image" width={200} height={200} />
             </div>
           </div>
@@ -65,7 +72,7 @@ export default function ResultsPage() {
             Analysis Results
           </div>
           <div id="gptOutput">
-            {apiData.text || 'Loading...'} {/* Display loading text while waiting for response */}
+            { receivedDataJson.text || 'Loading...'} {/* Display loading text while waiting for response */}
           </div>
           <form id="buttonPositioning">
             <button id="buttonSubmit" type="submit" onClick={animateButton}>Analyze Again</button>

@@ -38,6 +38,8 @@ export default function PromptsPage() {
             'additional': null
         });
         console.log('Response:', response); // Adding console log here
+        localStorage.setItem('dataKey', JSON.stringify(response));
+
     };
 
     return (

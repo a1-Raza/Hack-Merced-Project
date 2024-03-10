@@ -7,6 +7,7 @@ import ResultsPage from '@/components/results_page/page';
 
 type PageName = 'landing' | 'prompts' | 'results';
 
+
 function Project() {
 
     const [currentPage, setCurrentPage] = useState('landing');
