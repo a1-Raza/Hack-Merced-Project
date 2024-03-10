@@ -1,8 +1,11 @@
 "use client";
-import React from 'react';
+import React, {useState} from 'react';
 import "./landing.css"; // Ensure this is the correct path to your CSS file
 
+
+
 export default function LandingPage() {
+
 
   function animateButton() {
     const button = document.getElementById('promptSubmit');
@@ -12,6 +15,7 @@ export default function LandingPage() {
         button.style.animation = '';
       }, 500);
     }
+
   };
 
 
@@ -35,12 +39,14 @@ export default function LandingPage() {
       </div>
 
       <div id="Nasaexplaining">
-        <section className="APIs-used">
-          <h3>NASA Satellite and Google Earth APIs</h3>
-          {/* Adjusted the fontSize to a more reasonable value */}
-          <h4 style={{ fontSize: '24px' }}>Key Details</h4>
-          <p style={{ fontSize: '16px' }}>Additional fine print or minor details.</p>
-        </section>
+        <div id="nasatextcenter">
+          <section className="APIs-used">
+            <h3>NASA Satellite and Google Earth APIs</h3>
+            {/* Adjusted the fontSize to a more reasonable value */}
+            <h4 style={{ fontSize: '24px' }}>Key Details</h4>
+            <p style={{ fontSize: '16px' }}>Additional fine print or minor details.</p>
+          </section>
+        </div>
       </div>
 
       <div id="AItalk">
@@ -59,9 +65,7 @@ export default function LandingPage() {
         </section>
       </div>
 
-      <div>
-        <button id="startButton" type="submit" onClick={animateButton}>Submit</button>
-      </div>
+      
     </>
   );
 }

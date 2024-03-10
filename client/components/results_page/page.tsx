@@ -74,9 +74,7 @@ export default function ResultsPage() {
           <div id="gptOutput">
             { receivedDataJson.text || 'Loading...'} {/* Display loading text while waiting for response */}
           </div>
-          <form id="buttonPositioning">
-            <button id="buttonSubmit" type="submit" onClick={animateButton}>Analyze Again</button>
-          </form>
+          
         </div>
       </div>
     </>

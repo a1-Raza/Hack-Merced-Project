@@ -65,13 +65,15 @@ header h1 {
     align-content: center;
 }
 #Nasaexplaining{
+    margin-left: 10px;
+    margin-right: 1000px;
     text-align: left;
     font-size: 40px; 
     font-weight: bold;
     margin-top:50px;
 }
 #AItalk{
-    text-align: right;
+    text-align: center;
     font-size: 40px; 
     font-weight: bold;
     margin-top:20px;

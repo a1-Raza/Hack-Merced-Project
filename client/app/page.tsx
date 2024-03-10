@@ -5,12 +5,13 @@ import LandingPage from '@/components/landing_page/page';
 import PromptsPage from '@/components/prompts_page/page';
 import ResultsPage from '@/components/results_page/page';
 
-type PageName = 'landing' | 'prompts' | 'results';
+import "./pagebuttons.css"
 
+type PageName = 'landing' | 'prompts' | 'results';
 
 function Project() {
 
-    const [currentPage, setCurrentPage] = useState('landing');
+    const [currentPage, setCurrentPage] = useState('prompts');
     const changePage = (pageName: PageName) => {
         setCurrentPage(pageName);
     };
@@ -36,9 +37,12 @@ function Project() {
             {currentPageComponent}
 
             {/* Buttons to change pages */}
-            <button onClick={() => changePage('landing')}>Go to Landing Page</button>
-            <button onClick={() => changePage('prompts')}>Go to Prompts Page</button>
-            <button onClick={() => changePage('results')}>Go to Results Page</button>
+            <div id="centerPageButtons">
+            
+            <button id="pageChangeButton" onClick={() => changePage('prompts')}>Input Parameters</button>
+            <button id="pageChangeButton" onClick={() => changePage('results')}>Analysis</button>
+            </div>
+            
         </div>
     )
 }

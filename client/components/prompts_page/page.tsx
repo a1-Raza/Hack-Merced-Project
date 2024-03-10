@@ -50,6 +50,13 @@ export default function PromptsPage() {
             </header>
             <div>
                 <div id="promptText" className="prompt-text">Enter Coordinates</div>
+                <div id="promptDescText">Using a NASA Satellite and Google Earth Engine API, you can retrieve satellite<br/>
+                images of a specified body of water that can be compared with an AI language<br/>
+                model that can analyze the impacts of climate change in the area.<br/><br/>
+                Specify latitude and longitude coordinates of the body of water you would like to<br/>
+                examine. Set two dates for which the satellite data can be retrieved, and set<br/>
+                dimensions to set the size of the area you want examined. Click submit and<br/>
+                to analysis below to view the results. Wait for the data to update.</div>
                 <form id="promptForm" style={{ marginBottom: "350px" }}>
                     <div className="input-group">
                         <input id="latitudeInput" className="promptInput" type="text" name="latitude" placeholder="Latitude" value={latitude} onChange={(e) => setLatitude(e.target.value)} required />
@@ -60,7 +67,7 @@ export default function PromptsPage() {
                         <div className="info-icon" onMouseEnter={() => setShowInfo(true)} onMouseLeave={() => setShowInfo(false)}>
                             <FontAwesomeIcon icon={faQuestionCircle} />
                             <div className={`info-box ${showInfo ? 'active' : ''}`}>
-                                <p>The dimensions are counted in degrees, the default is 0.01. One degree is about 70 miles.</p>
+                                <p>The dimensions are counted in degrees, the default is 0.10. One degree is about 70 miles.</p>
                             </div>
                         </div>
                     </div>
@@ -78,7 +85,7 @@ export default function PromptsPage() {
                         placeholderText="End Date"
                         className="rounded-md border custom-datepicker"
                     />
-                    <button id="promptSubmit" type="button" onClick={animateButton}>Submit</button>
+                    <button id="promptSubmit" type="button" onClick={animateButton}>Submit Parameters</button>
                 </form>
                 <div id="promptList" className="chat-container">
                     {/* Prompt list will be displayed here */}
