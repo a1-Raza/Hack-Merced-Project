@@ -13,7 +13,7 @@ interface DataResponse {
     text: string,
 }
 
-export default function Prompts() {
+export default function PromptsPage() {
     const [showInfo, setShowInfo] = useState(false);
     const [latitude, setLatitude] = useState('');
     const [longitude, setLongitude] = useState('');
