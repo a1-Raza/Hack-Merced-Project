@@ -1,20 +1,34 @@
 import React from 'react'
 import Image from 'next/image'
 
+import "./prompts.css";
+
 export default function Results() {
   return (
     <>
 
-    <div>
-        <Image src="https://i.imgur.com/LLcSfJ7.jpeg"
-            alt="Earth Engine Image" width={500} height={500}></Image>
-    </div>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <div>
-        <Image src="https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/thumbnails/9bf6d9a64ebf8bc75e056589c53f8d19-e3171f791f0cd7cd25e7f944bae65c73:getPixels"
-            alt="Earth Engine Image" width={500} height={500}></Image>
-    </div>
+      <header>
+        <h1>HackMerced IX</h1>
+        <img src="/gold-orbit.png" alt="Globe picture" style={{ width: "100%", maxWidth: "60px", position: "absolute", top: "0", right: "65px", marginTop: "6px" }} />
+      </header>
 
+      <div id="promptText">
+        Analysis Results
+      </div>
+
+      <div id="resultsItems">
+        <div id="imageStack">
+          <Image src="https://i.imgur.com/LLcSfJ7.jpeg"
+            alt="Earth Engine Image" width={250} height={250}></Image>
+          <Image src="https://i.imgur.com/LLcSfJ7.jpeg"
+            alt="Earth Engine Image" width={250} height={250}></Image>
+        </div>
+        <div id="gptOutput">
+          Jiohg hufhre jgg ewwupewu. hufew ijoef feuegeregr.
+        </div>
+      </div>
     </>
   )
 }
